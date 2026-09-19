@@ -13,7 +13,7 @@
   /* ----- Theme toggle ---------------------------------------------------
      An explicit data-theme is stored when the visitor picks a theme;
      otherwise the stylesheet follows prefers-color-scheme. */
-  var STORAGE_KEY = "iconlens-theme";
+  var STORAGE_KEY = "lenses-theme";
   var toggle = document.getElementById("theme-toggle");
   var toggleText = document.getElementById("theme-toggle-text");
 
