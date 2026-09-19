@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lenses — offline accessibility and integrity tools</title>
+<meta name="description" content="Five small, offline tools for the files you ship: EPUB, DOCX, PPTX, OpenDocument, SVG, and WACZ. No network, no JVM, no GUI, SARIF for CI.">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Lenses — offline accessibility and integrity tools">
+<meta property="og:description" content="Five small, offline tools for the files you ship. Accessibility audits for EPUB, Office, OpenDocument and SVG, plus archive integrity for WACZ.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lenses-srivtx.vercel.app">
+<link rel="canonical" href="https://lenses-srivtx.vercel.app">
+<meta property="og:image" content="https://lenses-srivtx.vercel.app/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Lenses — offline accessibility and integrity tools">
+<meta name="twitter:description" content="Five small, offline tools for the files you ship.">
+<meta name="twitter:image" content="https://lenses-srivtx.vercel.app/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234f46e5'/%3E%3Ccircle cx='14' cy='14' r='6.4' fill='none' stroke='white' stroke-width='2.4'/%3E%3Cpath d='M19 19l6 6' stroke='white' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/lens.css">
+<link rel="stylesheet" href="assets/theme.css">
+<script>
+(function () {
+  try {
+    var stored = window.localStorage.getItem("lenses-theme");
+    if (stored === "dark" || stored === "light") {
+      document.documentElement.setAttribute("data-theme", stored);
+    }
+  } catch (err) {}
+  if (
+    "IntersectionObserver" in window &&
+    !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)
+  ) {
+    document.documentElement.classList.add("js");
+  }
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="nav" id="top">
+  <div class="container nav__inner">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="10.5" cy="10.5" r="6.5"></circle>
+          <path d="M15.5 15.5 21 21"></path>
+        </svg>
+      </span>
+      <span class="brand__name">Lenses</span>
+      <span class="brand__tag">by svx</span>
+    </a>
+
+    <nav class="nav__links" id="site-nav" aria-label="Sections">
+      <a href="#tools">Tools</a>
+      <a href="#why">Why</a>
+      <a href="#install">Install</a>
+      <a href="https://github.com/srivtx/lenses">GitHub</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button type="button" class="nav__toggle btn btn--ghost btn--sm" id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16"></path>
+        </svg>
+      </button>
+      <button type="button" class="btn btn--ghost btn--sm" id="theme-toggle" aria-pressed="false" aria-label="Switch to dark theme">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+        </svg>
+        <span id="theme-toggle-text">Theme</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero__glow" aria-hidden="true"></div>
+    <div class="container hero__inner">
+      <p class="hero__meta reveal"><span class="hero__dot" aria-hidden="true"></span> Five tools · EPUB, Office, OpenDocument, SVG, WACZ</p>
+      <h1 id="hero-title" class="reveal">Five small, offline tools for the files you ship.</h1>
+      <p class="hero__lede reveal">Each one reads a file format directly and reports what breaks accessibility, or proves an archive has not changed. They run on your machine, in a container, or in CI. No network, no JVM, no GUI.</p>
+
+      <div class="btn-row reveal">
+        <a class="btn btn--primary" href="#tools">See the tools</a>
+        <a class="btn btn--outline" href="#install">Install</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tools" aria-labelledby="tools-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="tools-title">The tools</h2>
+        <p>Four accessibility auditors and one archive-integrity tool. Same shape: a CLI, a library, JSON and SARIF output, and a browser playground on every site.</p>
+      </div>
+
+      <div class="grid grid--2">
+        <article class="card reveal">
+          <h3><a href="https://booklens-srivtx.vercel.app">booklens</a></h3>
+          <p class="card__meta">EPUB</p>
+          <p>Audits an EPUB against EPUB Accessibility 1.1 and WCAG 2.x, then writes a repaired book. Fixes metadata, language, headings, image alt text, and the navigation document.</p>
+          <div class="code code--wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/srivtx/booklens/main/install.sh | sh</code></pre></div>
+          <p class="card__meta"><a href="https://booklens-srivtx.vercel.app">Site</a> · <a href="https://github.com/srivtx/booklens">GitHub</a></p>
+        </article>
+
+        <article class="card reveal">
+          <h3><a href="https://officelens-srivtx.vercel.app">officelens</a></h3>
+          <p class="card__meta">DOCX · PPTX</p>
+          <p>Reads the OOXML part XML directly and flags missing alt text, heading order, language, table headers, and link text across the main part, headers, footers, and notes.</p>
+          <div class="code code--wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/srivtx/officelens/main/install.sh | sh</code></pre></div>
+          <p class="card__meta"><a href="https://officelens-srivtx.vercel.app">Site</a> · <a href="https://github.com/srivtx/officelens">GitHub</a></p>
+        </article>
+
+        <article class="card reveal">
+          <h3><a href="https://odflens-srivtx.vercel.app">odflens</a></h3>
+          <p class="card__meta">ODT · ODS · ODP</p>
+          <p>Audits OpenDocument text, spreadsheets, and presentations with rules gated by format, so a sheet or a deck is not judged by text-document rules. No LibreOffice, no Java.</p>
+          <div class="code code--wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/srivtx/odflens/main/install.sh | sh</code></pre></div>
+          <p class="card__meta"><a href="https://odflens-srivtx.vercel.app">Site</a> · <a href="https://github.com/srivtx/odflens">GitHub</a></p>
+        </article>
+
+        <article class="card reveal">
+          <h3><a href="https://iconlens-srivtx.vercel.app">iconlens</a></h3>
+          <p class="card__meta">SVG</p>
+          <p>Computes the accessible name of a standalone SVG the way a screen reader would, then flags the structural failures that break it, before the asset reaches a page.</p>
+          <div class="code code--wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/srivtx/iconlens/main/install.sh | sh</code></pre></div>
+          <p class="card__meta"><a href="https://iconlens-srivtx.vercel.app">Site</a> · <a href="https://github.com/srivtx/iconlens">GitHub</a></p>
+        </article>
+
+        <article class="card reveal">
+          <h3><a href="https://waxseal-srivtx.vercel.app">waxseal</a></h3>
+          <p class="card__meta">WACZ</p>
+          <p>Builds a deterministic Merkle root over every member of a web archive and signs it with Ed25519. Verification is offline, and any single member can be proven without shipping the archive.</p>
+          <div class="code code--wrap"><pre><code>curl -fsSL https://raw.githubusercontent.com/srivtx/waxseal/main/install.sh | sh</code></pre></div>
+          <p class="card__meta"><a href="https://waxseal-srivtx.vercel.app">Site</a> · <a href="https://github.com/srivtx/waxseal">GitHub</a></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="why" aria-labelledby="why-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="why-title">Why these exist</h2>
+        <p>Accessibility checking is solved for PDF and HTML, and largely unsolved for the formats people actually author documents in. These tools fill the gaps the incumbents leave: the asset on disk, the Office file, the OpenDocument file, the EPUB that needs repairing rather than just reporting.</p>
+      </div>
+
+      <ul class="steps reveal">
+        <li class="step">
+          <h3>Offline by default</h3>
+          <p>Files are read on your machine. No uploads, no telemetry, no network calls. The same run works on a laptop or in an air-gapped runner.</p>
+        </li>
+        <li class="step">
+          <h3>Deterministic output</h3>
+          <p>Stable ordering, stable JSON, and reproducible fixes and seals, so a diff in CI means a real change.</p>
+        </li>
+        <li class="step">
+          <h3>Built for CI</h3>
+          <p>Text, JSON, and SARIF 2.1.0 output, a documented exit-code scheme, and a threshold flag so a pull request fails on the severity you choose.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" id="install" aria-labelledby="install-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <h2 id="install-title">Install</h2>
+        <p>Each tool installs with one script. They are not published to npm; the script installs the binary from GitHub with Bun.</p>
+      </div>
+      <div class="code"><pre><code># Install any tool
+curl -fsSL https://raw.githubusercontent.com/srivtx/&lt;tool&gt;/main/install.sh | sh
+
+# Or run one without installing
+bunx github:srivtx/&lt;tool&gt;#main --help
+
+# tools: booklens officelens odflens iconlens waxseal</code></pre></div>
+      <p class="install__note">Requires <a href="https://bun.sh">Bun</a>. The install script checks for Bun, installs the binary globally, and verifies it is on your PATH.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="10.5" cy="10.5" r="6.5"></circle>
+              <path d="M15.5 15.5 21 21"></path>
+            </svg>
+          </span>
+          Lenses
+        </p>
+        <p class="muted">Five small, offline tools for the files you ship.</p>
+      </div>
+
+      <nav aria-label="Tools">
+        <h2>Tools</h2>
+        <ul>
+          <li><a href="https://booklens-srivtx.vercel.app">booklens</a></li>
+          <li><a href="https://officelens-srivtx.vercel.app">officelens</a></li>
+          <li><a href="https://odflens-srivtx.vercel.app">odflens</a></li>
+          <li><a href="https://iconlens-srivtx.vercel.app">iconlens</a></li>
+          <li><a href="https://waxseal-srivtx.vercel.app">waxseal</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Project">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/srivtx/lenses">Repository</a></li>
+          <li><a href="https://github.com/srivtx/lenses/blob/main/LICENSE">MIT license</a></li>
+          <li><a href="https://github.com/srivtx/lenses/issues">Issues</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer__meta">
+      <p>by svx · MIT licensed.</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>

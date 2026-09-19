@@ -1,0 +1,18 @@
+/* Lenses — umbrella site accent.
+   Only the accent changes here; everything else comes from lens.css. */
+:root {
+  --accent: #4f46e5;
+  --accent-ink: #ffffff;
+}
+
+[data-theme="dark"] {
+  --accent: #a5b4fc;
+  --accent-ink: #0a0a0a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --accent: #a5b4fc;
+    --accent-ink: #0a0a0a;
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "lenses",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Showcase site for the Lenses suite: offline accessibility and integrity tools for EPUB, Office, OpenDocument, SVG, and WACZ.",
+  "author": "svx",
+  "license": "MIT",
+  "type": "module",
+  "homepage": "https://lenses-srivtx.vercel.app",
+  "repository": "https://github.com/srivtx/lenses",
+  "bugs": "https://github.com/srivtx/lenses/issues",
+  "engines": {
+    "bun": ">=1.1.0"
+  },
+  "scripts": {
+    "check:site": "node scripts/check-site.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  }
+}
