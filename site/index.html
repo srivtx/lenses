@@ -225,6 +225,19 @@
             </div>
             <pre class="term__body"><span class="ln"><span class="p">$ </span><span class="cmd">iconlens logo.svg --json</span></span><span class="ln">{</span><span class="ln">  <span class="acc">"file"</span>: <span class="ok">"logo.svg"</span>,</span><span class="ln">  <span class="acc">"counts"</span>: { <span class="acc">"error"</span>: 3, <span class="acc">"warning"</span>: 2, <span class="acc">"info"</span>: 0 },</span><span class="ln">  <span class="acc">"issues"</span>: [</span><span class="ln">    { <span class="acc">"code"</span>: <span class="err">"SVG-NAME-001"</span>, <span class="acc">"severity"</span>: <span class="err">"error"</span>, <span class="acc">"wcag"</span>: <span class="ok">"4.1.2"</span> }</span><span class="ln">  ]</span><span class="ln">}</span></pre>
           </div>
+
+          <h3>An MCP server</h3>
+          <p><code>lenses-mcp</code> exposes all five tools to any Model Context Protocol client, so an agent can audit a file and read the result without shelling out by hand. It speaks stdio and returns the same JSON. Eight tools: audit for each format, <code>booklens_fix</code>, and <code>waxseal_seal</code>, <code>waxseal_verify</code>, and <code>waxseal_inspect</code>.</p>
+
+          <div class="term" aria-label="MCP client configuration">
+            <div class="term__bar">
+              <span class="term__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="term__title">mcp config</span>
+            </div>
+            <pre class="term__body term__body--wrap"><span class="ln">{</span><span class="ln">  <span class="acc">"mcpServers"</span>: {</span><span class="ln">    <span class="acc">"lenses"</span>: {</span><span class="ln">      <span class="acc">"command"</span>: <span class="ok">"bunx"</span>,</span><span class="ln">      <span class="acc">"args"</span>: [<span class="ok">"github:srivtx/lenses-mcp#main"</span>]</span><span class="ln">    }</span><span class="ln">  }</span><span class="ln">}</span></pre>
+          </div>
+
+          <p>Each site also serves an <a href="llms.txt">llms.txt</a>, so an agent can read the docs index without parsing HTML.</p>
         </div>
       </div>
     </div>
