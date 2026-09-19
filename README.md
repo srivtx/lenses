@@ -48,6 +48,18 @@ bunx github:srivtx/iconlens#main --help
 - Offline: files are read locally, with no network calls and no telemetry.
 - Deterministic output, so a CI diff means a real change.
 
+## For agents
+
+Every tool emits stable JSON with `--json` and SARIF 2.1.0, so an agent can read findings without scraping a screen. Two extras make that first-class:
+
+- **[lenses-mcp](https://github.com/srivtx/lenses-mcp)** — a Model Context Protocol server exposing all five tools over stdio. Add it to any MCP client:
+
+  ```json
+  { "mcpServers": { "lenses": { "command": "bunx", "args": ["github:srivtx/lenses-mcp#main"] } } }
+  ```
+
+- **`llms.txt`** — each site serves one (`/llms.txt`) so an agent can read the docs index without parsing HTML.
+
 ## This repository
 
 This repo contains only the umbrella site. It is plain static HTML, shares the `lens.css` design system with the five tool sites, and is checked by `scripts/check-site.mjs`.
