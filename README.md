@@ -13,7 +13,7 @@
 
 ---
 
-**Site:** [lenses-srivtx.vercel.app](https://lenses-srivtx.vercel.app)
+**Site:** [srivtx.github.io/lenses](https://srivtx.github.io/lenses)
 
 ## What this is
 
@@ -21,11 +21,11 @@ The showcase and entry point for a suite of offline command-line tools that read
 
 | Tool | Format | What it does | Site | Source |
 |---|---|---|---|---|
-| **booklens** | EPUB | Audits EPUB Accessibility 1.1 / WCAG 2.x and writes a repaired book | [site](https://booklens-srivtx.vercel.app) | [repo](https://github.com/srivtx/booklens) |
-| **officelens** | DOCX, PPTX | Audits OOXML accessibility: alt text, headings, language, tables, links | [site](https://officelens-srivtx.vercel.app) | [repo](https://github.com/srivtx/officelens) |
-| **odflens** | ODT, ODS, ODP | Audits OpenDocument accessibility with rules gated by format | [site](https://odflens-srivtx.vercel.app) | [repo](https://github.com/srivtx/odflens) |
-| **iconlens** | SVG | Computes the accessible name of a standalone SVG and flags what breaks it | [site](https://iconlens-srivtx.vercel.app) | [repo](https://github.com/srivtx/iconlens) |
-| **waxseal** | WACZ | Detached Ed25519 Merkle seal for web archives, with inclusion proofs | [site](https://waxseal-srivtx.vercel.app) | [repo](https://github.com/srivtx/waxseal) |
+| **booklens** | EPUB | Audits EPUB Accessibility 1.1 / WCAG 2.x and writes a repaired book | [site](https://srivtx.github.io/booklens) | [repo](https://github.com/srivtx/booklens) |
+| **officelens** | DOCX, PPTX | Audits OOXML accessibility: alt text, headings, language, tables, links | [site](https://srivtx.github.io/officelens) | [repo](https://github.com/srivtx/officelens) |
+| **odflens** | ODT, ODS, ODP | Audits OpenDocument accessibility with rules gated by format | [site](https://srivtx.github.io/odflens) | [repo](https://github.com/srivtx/odflens) |
+| **iconlens** | SVG | Computes the accessible name of a standalone SVG and flags what breaks it | [site](https://srivtx.github.io/iconlens) | [repo](https://github.com/srivtx/iconlens) |
+| **waxseal** | WACZ | Detached Ed25519 Merkle seal for web archives, with inclusion proofs | [site](https://srivtx.github.io/waxseal) | [repo](https://github.com/srivtx/waxseal) |
 
 ## Install
 

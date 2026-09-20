@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lenses-srivtx.vercel.app/sitemap.xml
+Sitemap: https://srivtx.github.io/lenses/sitemap.xml

@@ -7,12 +7,12 @@ Lenses is the umbrella site and entry point for a suite of command-line tools th
 The tools share one shape: a CLI and typed library over a single rule engine, stable JSON with `--json`, SARIF 2.1.0 for code scanning, and a documented exit-code scheme (`0` clean, `1` findings, `2` usage or parse error, `3` I/O error). Four are accessibility auditors; one is an archive-integrity tool.
 
 ## Tools
-- [Lenses overview](https://lenses-srivtx.vercel.app/): The umbrella page for the suite and how the tools fit together.
-- [booklens](https://booklens-srivtx.vercel.app/): EPUB — audits EPUB Accessibility 1.1 and WCAG 2.x, then writes a repaired book.
-- [officelens](https://officelens-srivtx.vercel.app/): DOCX and PPTX — reads OOXML parts and flags alt text, headings, language, tables, and links.
-- [odflens](https://odflens-srivtx.vercel.app/): ODT, ODS, ODP — audits OpenDocument with rules gated by format.
-- [iconlens](https://iconlens-srivtx.vercel.app/): SVG — computes the accessible name of a standalone SVG and flags what breaks it.
-- [waxseal](https://waxseal-srivtx.vercel.app/): WACZ — a detached Ed25519 Merkle seal with offline verification and inclusion proofs.
+- [Lenses overview](https://srivtx.github.io/lenses/): The umbrella page for the suite and how the tools fit together.
+- [booklens](https://srivtx.github.io/booklens/): EPUB — audits EPUB Accessibility 1.1 and WCAG 2.x, then writes a repaired book.
+- [officelens](https://srivtx.github.io/officelens/): DOCX and PPTX — reads OOXML parts and flags alt text, headings, language, tables, and links.
+- [odflens](https://srivtx.github.io/odflens/): ODT, ODS, ODP — audits OpenDocument with rules gated by format.
+- [iconlens](https://srivtx.github.io/iconlens/): SVG — computes the accessible name of a standalone SVG and flags what breaks it.
+- [waxseal](https://srivtx.github.io/waxseal/): WACZ — a detached Ed25519 Merkle seal with offline verification and inclusion proofs.
 
 ## Optional
 - [Source](https://github.com/srivtx/lenses): The umbrella static site repository.
